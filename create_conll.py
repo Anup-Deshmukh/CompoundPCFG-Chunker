@@ -3,20 +3,17 @@ import pickle
 import collections
 
 
-# x = pickle.load(open("../../conll2012/review_train_token.pkl", "rb"))
-# y = pickle.load(open("../../conll2012/review_val_token.pkl", "rb"))
-# z = pickle.load(open("../../conll2012/review_test_token.pkl", "rb"))
+x = pickle.load(open("train/data_train_tokens.pkl", "rb"))
+y = pickle.load(open("val/data_val_tokens.pkl", "rb"))
+z = pickle.load(open("test/data_test_tokens.pkl", "rb"))
 
-x = pickle.load(open("../../german_small_updated/german_train2_token.pkl", "rb"))
-y = pickle.load(open("../../german_small_updated/german_val2_token.pkl", "rb"))
-z = pickle.load(open("../../german_small_updated/german_test2_token.pkl", "rb"))
 
-pred_path = 'german/sents/train.txt'
+pred_path = 'train/conll_train.txt' # options: 'train/conll_train.txt', 'val/conll_val.txt', 'test/conll_test.txt'
 
 fc = 0
 with open(pred_path, 'a') as fp:
 	#for data_kind in [x,y,z]:
-	for data_kind in [x]:
+	for data_kind in [x]: #options: [x], [y], [z]
 
 		for p in range(len(data_kind)):
 			fc+=1

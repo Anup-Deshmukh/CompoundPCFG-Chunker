@@ -19,12 +19,14 @@ from utils import *
 parser = argparse.ArgumentParser()
 
 
-parser.add_argument('--data_file', default='german/sents/test.txt')
-parser.add_argument('--model_file', default='data/trained-fmodels/cpcfg_german28.pt')
+parser.add_argument('--data_file', default='train/conll_train.txt')
+parser.add_argument('--tag_file', default='train/data_train_tags.pkl')
+parser.add_argument('--model_file', default='data/trained-fmodels/compound-pcfg.pt')
 parser.add_argument('--out_file')
 # Inference options
 parser.add_argument('--use_mean', default=1, type=int, help='use mean from q if = 1')
 parser.add_argument('--gpu', default=0, type=int, help='which gpu to use')
+
 
 device = torch.device('cpu')
 print(device)
@@ -35,10 +37,7 @@ def clean_number(w):
   
 def main(args):
 	
-	#data_tags_gt = pickle.load(open("twitter/entire/twitter_entire_tag_no_hash.pkl", "rb")) ### CHANGE THIS ###
-	data_tags_gt = pickle.load(open("../../rnn1/conll_dataset/data_conll/conll/data_test_tags.pkl", "rb"))
-	#data_tags_gt = pickle.load(open("../../conll2012/review_test_tag.pkl", "rb")) ### CHANGE THIS ###
-	#data_tags_gt = pickle.load(open("../../german_small_updated/german_test2_tag.pkl", "rb"))
+	data_tags_gt = pickle.load(open(args.tag_file, "rb"))
 	
 	BI_gt = np.concatenate([np.array(g) for g in data_tags_gt])   #original code
 	#BI_gt = data_tags_gt
