@@ -1,4 +1,4 @@
-# Compound Probabilistic Context-Free Grammars
+# Compound PCFG Chunker
 
 This repository contains code for using Compound PCFG for unsupervised chunking: 
 
