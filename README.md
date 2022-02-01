@@ -22,8 +22,8 @@ To use
 python chunk.py --data_file PATH --tag_file PATH --model_file train/data_train_tags.pkl --out_file PATH- -use_mean 1 --gpu 0
 ```
   
-We build this repo on top of [Compund PCFG](https://github.com/harvardnlp/compound-pcfg)
-
+We build this repo on top of: 
+([Compund PCFG](https://github.com/harvardnlp/compound-pcfg))
 [Compound Probabilistic Context-Free Grammars for Grammar Induction](https://arxiv.org/abs/1906.10225)  
 Yoon Kim, Chris Dyer, Alexander Rush  
 ACL 2019  
